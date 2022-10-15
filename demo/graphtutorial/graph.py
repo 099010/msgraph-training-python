@@ -48,7 +48,9 @@ class Graph:
         # Only request specific properties
         select = 'from,isRead,receivedDateTime,subject'
         # Get at most 25 results
-        top = 25
+        # top = 25
+        top = random.randint(5,25)
+        print("get{}results".format(top))
         # Sort by received time, newest first
         order_by = 'receivedDateTime DESC'
         request_url = f'{endpoint}?$select={select}&$top={top}&$orderBy={order_by}'
